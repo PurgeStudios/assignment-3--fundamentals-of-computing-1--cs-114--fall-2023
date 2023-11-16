@@ -6,16 +6,34 @@ public class RunMatrix {
     System.out.print("Please enter the size of your matrix: ");
     Scanner scan = new Scanner(System.in);
 
+
     int userInput = scan.nextInt();
-    System.out.println(); //Spaces output for visibility
+
+    if(userInput > 0) { //Checks if input negative
+
+    }
+    else if(userInput <= 0) {
+      System.out.println("\n\u001B[33m" + "You have entered a negative number, please provide a postive number. " +
+      "Specific error code below:" + "\u001B[0m\n");
+    }
+
+    System.out.println(); //Spaces output for readability
 
     Matrix.matrix(userInput);
-    System.out.println();
 
     Matrix.printMatrix(userInput);
     System.out.println();
 
-    scan.close();
+    Matrix.populateMatrix();
 
+    Matrix.printMatrix(userInput);
+    System.out.println();
+
+    Matrix.flipMatrix();
+    System.out.println();
+
+    Matrix.printMatrix(userInput);
+
+    scan.close();
     }
   }
